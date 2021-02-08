@@ -42,11 +42,11 @@
               </div> -->
 
               <div class="field-wrap">
-                <input type="email"placeholder="이메일" name="name" required/>
+                <input type="email"placeholder="이메일" name="email" required/>
               </div>
 
               <div class="field-wrap">
-                <input type="number"placeholder="가격" name="content" required/>
+                <input type="number"placeholder="가격" name="price" required/>
               </div>
               
               <button type="submit" class="add-to-cart"/>확인</button>
@@ -61,16 +61,16 @@
         while($row=$result->fetch_array()){
           echo "<table width=600 border=1><tr>";
           echo "<td>No. $row[id]</td>";
-          $nm = substr($row[name], 0, 3); 
+          $nm = substr($row[email], 0, 3); 
           echo "<td>$nm";
-            for($i =0; $i < strlen($row[name]) - 3; $i=$i+1) {
+            for($i =0; $i < strlen($row[email]) - 3; $i=$i+1) {
               echo "*";
             }
           echo "</td>";
-          echo "<td>$row[wdate]</td>";
+          echo "<td>$row[date]</td>";
           //echo "<td><a href='modifycheck.php?id=$row[id]'>수정</a></td>";
           //echo "<td><a href='delete.php?id=$row[id]'>삭제</a></td></tr>";
-          echo "<tr><td colspan=5>$row[content] 원</td>";
+          echo "<tr><td colspan=5>$row[price] 원</td>";
           echo "</tr></table>";
           echo "<br />";
         }
